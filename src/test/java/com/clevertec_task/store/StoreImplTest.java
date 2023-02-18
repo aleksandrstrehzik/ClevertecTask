@@ -1,10 +1,12 @@
 package com.clevertec_task.store;
 
-import com.clevertec_task.checks.Check;
-import com.clevertec_task.checks.SimpleCheck;
-import com.clevertec_task.factories.CardFactory;
-import com.clevertec_task.factories.ProductFactory;
-import com.clevertec_task.util.CheckPrinterAndWriter;
+import com.clevertec_task.service.interfaces.checks.Check;
+import com.clevertec_task.service.impl.checks.SimpleCheck;
+import com.clevertec_task.repository.factories.CardFactory;
+import com.clevertec_task.repository.factories.ProductFactory;
+import com.clevertec_task.service.interfaces.stores.Store;
+import com.clevertec_task.service.impl.store.StoreImpl;
+import com.clevertec_task.service.utils.CheckPrinterAndWriter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

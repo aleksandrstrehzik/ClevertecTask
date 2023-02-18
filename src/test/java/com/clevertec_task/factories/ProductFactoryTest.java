@@ -1,6 +1,7 @@
 package com.clevertec_task.factories;
 
-import com.clevertec_task.product.Product;
+import com.clevertec_task.repository.entity.product.Product;
+import com.clevertec_task.repository.factories.ProductFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

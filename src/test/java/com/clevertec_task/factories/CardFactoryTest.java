@@ -1,7 +1,7 @@
 package com.clevertec_task.factories;
 
-import com.clevertec_task.cards.Card;
-import com.clevertec_task.cards.CardImpl;
+import com.clevertec_task.repository.entity.cards.Card;
+import com.clevertec_task.repository.factories.CardFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

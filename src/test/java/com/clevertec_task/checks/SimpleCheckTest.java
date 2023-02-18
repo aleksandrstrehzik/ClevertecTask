@@ -1,13 +1,14 @@
 package com.clevertec_task.checks;
 
-import com.clevertec_task.cards.Card;
-import com.clevertec_task.cards.CardImpl;
-import com.clevertec_task.factories.CardFactory;
-import com.clevertec_task.factories.ProductFactory;
-import com.clevertec_task.product.Product;
-import com.clevertec_task.store.Store;
-import com.clevertec_task.store.StoreImpl;
-import com.clevertec_task.util.CheckUtil;
+import com.clevertec_task.repository.entity.cards.Card;
+import com.clevertec_task.repository.entity.product.Product;
+import com.clevertec_task.repository.factories.CardFactory;
+import com.clevertec_task.repository.factories.ProductFactory;
+import com.clevertec_task.service.impl.checks.SimpleCheck;
+import com.clevertec_task.service.interfaces.checks.Check;
+import com.clevertec_task.service.impl.store.StoreImpl;
+import com.clevertec_task.service.interfaces.stores.Store;
+import com.clevertec_task.service.utils.CheckUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
