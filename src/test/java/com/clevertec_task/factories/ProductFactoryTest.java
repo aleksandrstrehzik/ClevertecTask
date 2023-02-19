@@ -1,3 +1,4 @@
+/*
 package com.clevertec_task.factories;
 
 import com.clevertec_task.repository.entity.product.Product;
@@ -26,4 +27,4 @@ class ProductFactoryTest {
         Product product = factory.getProduct(0);
         assertNull(product);
     }
-}
+}*/

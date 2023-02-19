@@ -1,15 +1,13 @@
 package com.clevertec_task.repository.dao.interfaces;
 
-import java.sql.SQLException;
-
 public interface DAO<T> {
 
     void save(T t);
 
-    T selectById(int id) throws SQLException;
+    T selectById(int id);
 
-    void update(T t) throws SQLException;
+    void update(T t);
 
-    void delete(T t) throws SQLException;
+    void delete(T t);
 
 }

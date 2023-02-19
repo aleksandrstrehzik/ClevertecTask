@@ -1,5 +1,6 @@
 package com.clevertec_task.service.impl.store;
 
+import com.clevertec_task.repository.dao.interfaces.DAO;
 import com.clevertec_task.repository.entity.cards.Card;
 import com.clevertec_task.repository.entity.product.Product;
 import com.clevertec_task.service.exception.NullInput;
@@ -16,21 +17,23 @@ import com.clevertec_task.service.utils.CheckPrinterAndWriter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.file.Path;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Map;
 
 public class StoreImpl implements Store {
-    private String title;
+
     private ProductFactory factory;
     private Check check;
     private CardFactory cardFactory;
+    private DAO<Product> productDAO;
 
-    public StoreImpl(String title, ProductFactory factory, Check check, CardFactory cardFactory) {
-        this.title = title;
+    public StoreImpl(ProductFactory factory, Check check, CardFactory cardFactory, DAO<Product> productDAO) {
         this.factory = factory;
         this.check = check;
         this.cardFactory = cardFactory;
+        this.productDAO = productDAO;
     }
 
     @Override
@@ -81,7 +84,6 @@ public class StoreImpl implements Store {
         int[] numArray = CheckUtil.getNumArray(d);
         Map<Product, Integer> shoppingСart = check.getShoppingСart();
         for (int i = 0; i < idArray.length; i++) {
-            ProductDAO productDAO = new ProductDAO(new JDBCConnection());
             Product product = productDAO.selectById(idArray[i]);
             if (product != null) {
                 shoppingСart.put(product, numArray[i]);
@@ -94,7 +96,6 @@ public class StoreImpl implements Store {
         StringBuilder builder = new StringBuilder();
         StringBuilder append = builder.append("                 CASH RECEIPT")
                 .append("\n")
-                .append("                 " + title)
                 .append("\n")
                 .append("                 +203920392039023")
                 .append("\n")

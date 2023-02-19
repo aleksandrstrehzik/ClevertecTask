@@ -10,12 +10,12 @@ import java.util.Map;
 public class CheckWithDiscount implements Check {
 
     private Check check;
+    private Map<Product, Integer> shoppingСart;
+
 
     public CheckWithDiscount(Check check) {
         this.check = check;
     }
-
-    private Map<Product, Integer> shoppingСart;
 
     @Override
     public Map<Product, Integer> getShoppingСart() {
