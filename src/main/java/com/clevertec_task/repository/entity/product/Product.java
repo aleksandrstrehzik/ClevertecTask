@@ -1,6 +1,9 @@
 package com.clevertec_task.repository.entity.product;
 
+import com.clevertec_task.repository.entity.cards.Card;
+
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Product {
 
@@ -71,5 +74,19 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return IsOnDiscount == product.IsOnDiscount && Objects.equals(marking, product.marking) && Objects.equals(price, product.price)
+                && type == product.type && Objects.equals(description, product.description) && Objects.equals(id, product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(IsOnDiscount, marking, price, type, description, id);
     }
 }

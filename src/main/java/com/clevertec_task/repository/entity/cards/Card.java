@@ -1,6 +1,7 @@
 package com.clevertec_task.repository.entity.cards;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Card {
     private BigDecimal discount;
@@ -46,5 +47,19 @@ public class Card {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return Objects.equals(discount, card.discount) &&
+                Objects.equals(id, card.id) && Objects.equals(name, card.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(discount, id, name);
     }
 }
