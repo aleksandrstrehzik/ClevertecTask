@@ -2,6 +2,7 @@ package com.clevertec_task.service.impl.store;
 
 import com.clevertec_task.repository.entity.cards.Card;
 import com.clevertec_task.repository.entity.product.Product;
+import com.clevertec_task.service.exception.NullInput;
 import com.clevertec_task.service.interfaces.checks.Check;
 import com.clevertec_task.service.impl.checks.CheckWithDiscount;
 import com.clevertec_task.repository.dao.impl.ProductDAO;
@@ -44,7 +45,7 @@ public class StoreImpl implements Store {
                 saveInTxt(d, shoppingСart, path);
                 printInConsole(d, shoppingСart);
             }
-        }
+        } else throw new NullInput();
     }
 
     @Override
